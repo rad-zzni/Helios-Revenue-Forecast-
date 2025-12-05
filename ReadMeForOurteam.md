@@ -5,22 +5,29 @@ Member 3: Desmond -- Frontend
 
 ---
 # How to push your changes using git
-Paste the following in your terminal and replace "<changes made>" with the actual changes you made:
+Make sure you are working on your own branch. Replace `<your-branch>` and `<changes made>` with the appropriate values:
 
 ```
-git add . 
+git add .
 git commit -m "<changes made>"
-git push origin main
+git push origin <your-branch>
 ```
 
 ---
-# How to pull the updated version of main to work-on using git
-Paste the following in your terminal and replace <branch-name> with your branch name.
+# How to pull the updated version of main to work on
+Run this to update your local main branch:
 
 ```
-git pull origin <branch-name>
+git checkout main
+git pull origin main
 ```
 
+Then switch back to your branch and merge the new changes:
+
+```
+git checkout <your-branch>
+git merge main
+```
 
 ---
 # How to run
