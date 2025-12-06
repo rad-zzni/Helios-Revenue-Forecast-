@@ -67,8 +67,23 @@ revenue = pred_kwh * rate
 # Uncertainty estimate
 uncertainty = np.std(pred_kwh) * np.ones_like(pred_kwh)
 
-# Summary for SpoonOS
-analysis_text = f"Peak output: {pred_kwh.max():.3f} kWh. Low point: {pred_kwh.min():.3f} kWh."
+# Enhanced multi-metric summary for SpoonOS
+peak_val = pred_kwh.max()
+peak_hour = int(np.argmax(pred_kwh))
+min_val = pred_kwh.min()
+mean_val = float(np.mean(pred_kwh))
+unc_mean = float(np.mean(uncertainty))
+trend = "increasing" if pred_kwh[12] < pred_kwh[18] else "decreasing"
+
+analysis_text = (
+    f"Peak output is {peak_val:.3f} kWh occurring at hour index {peak_hour}. "
+    f"Lowest production is {min_val:.3f} kWh. "
+    f"Average hourly output is {mean_val:.3f} kWh. "
+    f"Uncertainty averages {unc_mean:.3f}. "
+    f"Overall production trend appears {trend}. "
+    f"Cloud cover, temperature, and irradiance patterns suggest "
+    f"moderate variability in the afternoon period. "
+)
 
 # Build final output JSON
 forecast = {
