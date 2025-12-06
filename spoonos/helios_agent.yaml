@@ -1,0 +1,12 @@
+tools:
+  - type: rest
+    base_url: "https://localhost:3001"
+    endpoints:
+      - path: "/forecast"
+        method: "GET"
+      - path: "/analysis_input"
+        method: GET
+      - path: "/hash_forecast"
+        method: GET
+      - path: "/publish_hash"
+        method: POST
