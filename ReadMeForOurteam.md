@@ -31,7 +31,7 @@ git merge main
 
 ---
 # How to run
-In order to run everything in parallel, paste the following in 3 separate terminals:
+In order to run everything in parallel, paste the following in 3 separate terminals, FROM the root folder (probably called Helios Revenue Forecast for you guys):
 
 Terminal 1:
 ```
